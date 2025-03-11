@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ER Diagram Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add html2canvas library for screenshot functionality -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>ER Diagram Maker</h1>
+        <div class="toolbar">
+            <div class="dropdown-container">
+                <button id="add-entity-btn">Add Entity</button>
+                <div class="dropdown-content" id="entity-type-dropdown">
+                    <a href="#" data-type="regular">Regular Entity</a>
+                    <a href="#" data-type="weak">Weak Entity</a>
+                    <a href="#" data-type="relationship">Relationship Entity</a>
+                </div>
+            </div>
+            <button id="add-relationship-btn">Connect Elements</button>
+            <button id="delete-btn">Delete Selected</button>
+            <button id="export-btn">Export as Image</button>
+            <button id="save-btn">Save Diagram</button>
+            <button id="load-btn">Load Diagram</button>
+            <button id="clear-btn">Clear All</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div id="canvas" class="canvas"></div>
+        
+        <div id="properties-panel" class="properties-panel">
+            <h2>Properties</h2>
+            <div id="entity-properties" class="property-section">
+                <h3>Entity Properties</h3>
+                <div class="entity-type-property">
+                    <label>Type:</label>
+                    <select id="entity-type-select">
+                        <option value="regular">Regular Entity</option>
+                        <option value="weak">Weak Entity</option>
+                        <option value="relationship">Relationship Entity</option>
+                    </select>
+                </div>
+                <div id="entity-attrs"></div>
+                <button id="add-attribute-btn">Add Attribute</button>
+            </div>
+            <div id="relationship-properties" class="property-section">
+                <h3>Relationship Properties</h3>
+                <select id="relationship-type">
+                    <option value="one-to-one">One-to-One</option>
+                    <option value="one-to-many">One-to-Many</option>
+                    <option value="many-to-many">Many-to-Many</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Entity Creation Modal -->
+    <div id="entity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Element</h2>
+            <div class="form-group">
+                <label for="entity-name">Name:</label>
+                <input type="text" id="entity-name" required>
+            </div>
+            <div class="form-group">
+                <label for="entity-type">Type:</label>
+                <select id="entity-type">
+                    <option value="regular">Regular Entity</option>
+                    <option value="weak">Weak Entity</option>
+                    <option value="relationship">Relationship Entity</option>
+                </select>
+            </div>
+            <button id="create-entity-btn">Create</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
