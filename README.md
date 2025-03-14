@@ -2,7 +2,6 @@
 
 An interactive, browser-based tool for creating Entity-Relationship diagrams with a modern, neon-themed UI.
 
-![Screenshot of ER Diagram Maker](screenshot.png)
 
 ## Features
 
