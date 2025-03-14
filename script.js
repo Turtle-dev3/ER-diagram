@@ -413,8 +413,9 @@ document.addEventListener('DOMContentLoaded', () => {
             tooltip.textContent = 'Click on two entities to create a relationship';
             document.body.appendChild(tooltip);
         } else {
-            addRelationshipBtn.textContent = 'Add Relationship';
-            addRelationshipBtn.style.backgroundColor = '#4CAF50';
+            addRelationshipBtn.textContent = 'Connect Elements';
+            // Remove explicit background color to revert to CSS default styling
+            addRelationshipBtn.style.removeProperty('background-color');
             state.canvas.style.cursor = 'default';
             
             // Remove visual indicators
